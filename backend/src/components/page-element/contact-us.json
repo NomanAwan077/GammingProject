@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_page_element_contactuses",
+  "info": {
+    "displayName": "ContactUs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CONTACT US"
+    },
+    "Heading": {
+      "type": "string",
+      "default": "Have a Question ? Let’s Get in Touch with us"
+    },
+    "DetailBox": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-us.detail-box"
+    },
+    "ContactForm": {
+      "displayName": "ContactForm",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-us.contact-form"
+    },
+    "useLink": {
+      "displayName": "useLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-us.use-link"
+    }
+  }
+}

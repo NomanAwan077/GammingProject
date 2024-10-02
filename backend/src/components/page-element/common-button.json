@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_element_common_buttons",
+  "info": {
+    "displayName": "CommonButton",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ButtonText": {
+      "type": "string",
+      "default": "Get Started"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

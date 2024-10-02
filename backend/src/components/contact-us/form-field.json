@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_us_form_fields",
+  "info": {
+    "displayName": "FormField"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Placeholder": {
+      "type": "string"
+    }
+  }
+}

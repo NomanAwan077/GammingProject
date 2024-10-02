@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_element_map_end_points",
+  "info": {
+    "displayName": "MapEndPoints"
+  },
+  "options": {},
+  "attributes": {
+    "Longitude": {
+      "type": "decimal"
+    },
+    "Latitude": {
+      "type": "decimal"
+    }
+  }
+}

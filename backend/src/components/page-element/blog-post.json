@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_element_blog_posts",
+  "info": {
+    "displayName": "BlogPost"
+  },
+  "options": {},
+  "attributes": {
+    "blogImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "BlogTime": {
+      "type": "string",
+      "default": "8 min read"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

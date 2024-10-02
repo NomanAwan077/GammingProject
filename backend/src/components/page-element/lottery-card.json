@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_page_element_lottery_cards",
+  "info": {
+    "displayName": "LotteryCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CardImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ReadMore": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "LandingPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.home-card"
+    },
+    "ClientTestimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.client-testimonials"
+    },
+    "HowItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.how-it-works"
+    },
+    "WhyChoseTLF": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.why-chose-tlf"
+    },
+    "FAQ": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.faq"
+    },
+    "RecentBlogs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.recent-blog"
+    },
+    "ProvinceGames": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.province-games"
+    },
+    "ClientReviews": {
+      "displayName": "ClientReviews",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.client-reviews"
+    },
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.bannner"
+    },
+    "ContactUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.contact-us"
+    },
+    "Footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.footer"
+    },
+    "Header": {
+      "displayName": "Header",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.header"
+    }
+  }
+}

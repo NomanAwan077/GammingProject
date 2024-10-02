@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_page_element_client_testimonials",
+  "info": {
+    "displayName": "ClientTestimonials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "text"
+    },
+    "YearsInIndustry": {
+      "type": "integer",
+      "default": 14
+    },
+    "HappyClients": {
+      "type": "integer"
+    },
+    "RaisedFor": {
+      "type": "integer"
+    },
+    "CompniesImage": {
+      "displayName": "Companies Review",
+      "type": "component",
+      "repeatable": true,
+      "component": "client-testimonials.companies-review"
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

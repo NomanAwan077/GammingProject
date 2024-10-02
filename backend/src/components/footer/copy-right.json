@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_footer_copy_rights",
+  "info": {
+    "displayName": "CopyRight"
+  },
+  "options": {},
+  "attributes": {
+    "copyright": {
+      "type": "string",
+      "default": "© 2023 TLF. All Rights Reserved."
+    }
+  }
+}

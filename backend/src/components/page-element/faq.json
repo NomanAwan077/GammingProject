@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_page_element_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "FAQ"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "QuestionWrapper": {
+      "displayName": "QuestionsWrapper",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.questions-wrapper"
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.common-button"
+    }
+  }
+}

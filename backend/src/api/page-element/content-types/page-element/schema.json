@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_elements",
+  "info": {
+    "singularName": "page-element",
+    "pluralName": "page-elements",
+    "displayName": "Page element"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "displayName": "HomeHero",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.home-hero"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logoTitle": {
+      "type": "string",
+      "maxLength": 200,
+      "minLength": 3,
+      "required": true,
+      "default": "Fundraising Solutions"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_element_province_games",
+  "info": {
+    "displayName": "ProvinceGames"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Games Available In Your Province"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.common-button"
+    },
+    "MapEndPoints": {
+      "displayName": "MapEndPoints",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.map-end-points"
+    }
+  }
+}

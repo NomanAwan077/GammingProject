@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_page_element_recent_blog_s",
+  "info": {
+    "displayName": "RecentBlog ",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "RecentBlog": {
+      "type": "string",
+      "default": "Recent Blog "
+    },
+    "MainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "BlogStatus": {
+      "type": "string",
+      "default": "FUNDRaising"
+    },
+    "TimeLimit": {
+      "type": "string",
+      "default": "8 min read"
+    },
+    "BlogTitle": {
+      "type": "string",
+      "default": "Online Fundraising Options in Canada: Exploring 50/50 and Chase the Ace"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "BlogPost": {
+      "displayName": "BlogPost",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.blog-post"
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_us_use_links",
+  "info": {
+    "displayName": "useLink"
+  },
+  "options": {},
+  "attributes": {
+    "Link": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

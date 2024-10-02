@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_element_landing_bannerrs",
+  "info": {
+    "displayName": "LandingBannerr"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Ready To Get Started"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

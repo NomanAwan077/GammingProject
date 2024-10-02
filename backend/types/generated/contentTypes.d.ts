@@ -1,36 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiNameName extends Struct.CollectionTypeSchema {
-  collectionName: 'names';
-  info: {
-    singularName: 'name';
-    pluralName: 'names';
-    displayName: 'Name';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Gaming: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-        maxLength: 50;
-      }> &
-      Schema.Attribute.DefaultTo<'Game Here'>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::name.name'>;
-  };
-}
-
 export interface PluginUploadFile extends Struct.CollectionTypeSchema {
   collectionName: 'files';
   info: {
@@ -516,6 +485,142 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCommonButtonCommonButton extends Struct.SingleTypeSchema {
+  collectionName: 'common_buttons';
+  info: {
+    singularName: 'common-button';
+    pluralName: 'common-buttons';
+    displayName: 'CommonButton';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ButtonText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Get Started'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::common-button.common-button'
+    >;
+  };
+}
+
+export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logoTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 200;
+      }> &
+      Schema.Attribute.DefaultTo<'Fundraising Solutions'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::header.header'>;
+  };
+}
+
+export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    singularName: 'landing-page';
+    pluralName: 'landing-pages';
+    displayName: 'LandingPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HeroSection: Schema.Attribute.Component<'page-element.home-card', false>;
+    ClientTestimonial: Schema.Attribute.Component<
+      'page-element.client-testimonials',
+      false
+    >;
+    HowItWorks: Schema.Attribute.Component<'page-element.how-it-works', false>;
+    WhyChoseTLF: Schema.Attribute.Component<
+      'page-element.why-chose-tlf',
+      false
+    >;
+    FAQ: Schema.Attribute.Component<'page-element.faq', false>;
+    RecentBlogs: Schema.Attribute.Component<'page-element.recent-blog', false>;
+    ProvinceGames: Schema.Attribute.Component<
+      'page-element.province-games',
+      false
+    >;
+    ClientReviews: Schema.Attribute.Component<
+      'page-element.client-reviews',
+      false
+    >;
+    Banner: Schema.Attribute.Component<'page-element.bannner', false>;
+    ContactUs: Schema.Attribute.Component<'page-element.contact-us', false>;
+    Footer: Schema.Attribute.Component<'page-element.footer', false>;
+    Header: Schema.Attribute.Component<'page-element.header', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    >;
+  };
+}
+
+export interface ApiPageElementPageElement extends Struct.SingleTypeSchema {
+  collectionName: 'page_elements';
+  info: {
+    singularName: 'page-element';
+    pluralName: 'page-elements';
+    displayName: 'Page element';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Schema.Attribute.Component<'page-element.home-hero', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::page-element.page-element'
+    >;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -881,7 +986,6 @@ export interface AdminTransferTokenPermission
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
-      'api::name.name': ApiNameName;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
@@ -892,6 +996,10 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::common-button.common-button': ApiCommonButtonCommonButton;
+      'api::header.header': ApiHeaderHeader;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::page-element.page-element': ApiPageElementPageElement;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

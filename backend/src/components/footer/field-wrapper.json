@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_footer_field_wrappers",
+  "info": {
+    "displayName": "FieldWrapper"
+  },
+  "options": {},
+  "attributes": {
+    "FieldTitle": {
+      "type": "string"
+    },
+    "ButtonText": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.common-button"
+    }
+  }
+}

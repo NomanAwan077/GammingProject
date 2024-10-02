@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_element_questions_wrappers",
+  "info": {
+    "displayName": "QuestionsWrapper"
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "text"
+    },
+    "Answer": {
+      "type": "text"
+    }
+  }
+}

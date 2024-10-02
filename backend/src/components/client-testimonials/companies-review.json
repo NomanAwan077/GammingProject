@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_client_testimonials_companies_reviews",
+  "info": {
+    "displayName": "Companies Review"
+  },
+  "options": {},
+  "attributes": {
+    "companyImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

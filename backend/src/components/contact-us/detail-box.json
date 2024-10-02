@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_us_detail_boxes",
+  "info": {
+    "displayName": "DetailBox"
+  },
+  "options": {},
+  "attributes": {
+    "FieldTitle": {
+      "type": "string"
+    },
+    "FieldDetail": {
+      "type": "text"
+    },
+    "SubTitle": {
+      "type": "string"
+    }
+  }
+}

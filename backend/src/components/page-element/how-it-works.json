@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_element_how_it_works",
+  "info": {
+    "displayName": "HowItWorks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "How It Works"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "LotteryCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.lottery-card"
+    }
+  }
+}

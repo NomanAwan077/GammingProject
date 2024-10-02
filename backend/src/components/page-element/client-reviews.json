@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_element_client_reviews",
+  "info": {
+    "displayName": "ClientReviews"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "What our clients think about TLF services"
+    },
+    "ImagesWraapper": {
+      "displayName": "ImagesWrapper",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.images-wrapper"
+    }
+  }
+}

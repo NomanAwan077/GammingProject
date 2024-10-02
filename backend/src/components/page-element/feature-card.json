@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_page_element_feature_cards",
+  "info": {
+    "displayName": "FeatureCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "CardStatus": {
+      "type": "string",
+      "default": "primary"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "GetStarted": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

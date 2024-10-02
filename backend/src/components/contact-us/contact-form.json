@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_contact_us_contact_forms",
+  "info": {
+    "displayName": "ContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Fill up the Form  and our team will get back to within 24 hrs"
+    },
+    "FormField": {
+      "displayName": "FormField",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-us.form-field"
+    },
+    "SubmitBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_element_home_cards",
+  "info": {
+    "displayName": "HomeHeroSection",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "text"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    }
+  }
+}

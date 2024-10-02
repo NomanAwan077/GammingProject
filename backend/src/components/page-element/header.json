@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_element_headers",
+  "info": {
+    "displayName": "Header"
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.common-button"
+    }
+  }
+}

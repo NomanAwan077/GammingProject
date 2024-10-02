@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "common_buttons",
+  "info": {
+    "singularName": "common-button",
+    "pluralName": "common-buttons",
+    "displayName": "CommonButton"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ButtonText": {
+      "type": "string",
+      "default": "Get Started"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_element_home_heroes",
+  "info": {
+    "displayName": "HomeHero",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heroCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.home-card"
+    }
+  }
+}

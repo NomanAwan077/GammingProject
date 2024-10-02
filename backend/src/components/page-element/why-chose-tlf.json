@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_element_why_chose_tlves",
+  "info": {
+    "displayName": "WhyChoseTLF"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Why Choose TLF Fundraising Solutions"
+    },
+    "FeatureCard": {
+      "displayName": "FeatureCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.feature-card"
+    }
+  }
+}

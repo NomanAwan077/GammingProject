@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_page_element_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "FieldWrapper": {
+      "displayName": "FieldWrapper",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.field-wrapper"
+    },
+    "CopyRight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.copy-right"
+    }
+  }
+}
