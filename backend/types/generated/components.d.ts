@@ -1,129 +1,122 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PageElementWhyChoseTlf extends Struct.ComponentSchema {
+export interface PageElementWhyChoseTlf extends Schema.Component {
   collectionName: 'components_page_element_why_chose_tlves';
   info: {
     displayName: 'WhyChoseTLF';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Why Choose TLF Fundraising Solutions'>;
-    FeatureCard: Schema.Attribute.Component<'page-element.feature-card', true>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Why Choose TLF Fundraising Solutions'>;
+    FeatureCard: Attribute.Component<'page-element.feature-card', true>;
   };
 }
 
-export interface PageElementRecentBlog extends Struct.ComponentSchema {
+export interface PageElementRecentBlog extends Schema.Component {
   collectionName: 'components_page_element_recent_blog_s';
   info: {
     displayName: 'RecentBlog ';
     description: '';
   };
   attributes: {
-    RecentBlog: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Recent Blog '>;
-    MainImage: Schema.Attribute.Media<'images' | 'files'>;
-    BlogStatus: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'FUNDRaising'>;
-    TimeLimit: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'8 min read'>;
-    BlogTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Online Fundraising Options in Canada: Exploring 50/50 and Chase the Ace'>;
-    Description: Schema.Attribute.Text;
-    BlogPost: Schema.Attribute.Component<'page-element.blog-post', true>;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', false>;
+    RecentBlog: Attribute.String & Attribute.DefaultTo<'Recent Blog '>;
+    MainImage: Attribute.Media<'images' | 'files'>;
+    BlogStatus: Attribute.String & Attribute.DefaultTo<'FUNDRaising'>;
+    TimeLimit: Attribute.String & Attribute.DefaultTo<'8 min read'>;
+    BlogTitle: Attribute.String &
+      Attribute.DefaultTo<'Online Fundraising Options in Canada: Exploring 50/50 and Chase the Ace'>;
+    Description: Attribute.Text;
+    BlogPost: Attribute.Component<'page-element.blog-post', true>;
+    BtnText: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementQuestionsWrapper extends Struct.ComponentSchema {
+export interface PageElementQuestionsWrapper extends Schema.Component {
   collectionName: 'components_page_element_questions_wrappers';
   info: {
     displayName: 'QuestionsWrapper';
   };
   attributes: {
-    Question: Schema.Attribute.Text;
-    Answer: Schema.Attribute.Text;
+    Question: Attribute.Text;
+    Answer: Attribute.Text;
   };
 }
 
-export interface PageElementProvinceGames extends Struct.ComponentSchema {
+export interface PageElementProvinceGames extends Schema.Component {
   collectionName: 'components_page_element_province_games';
   info: {
     displayName: 'ProvinceGames';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Games Available In Your Province'>;
-    Description: Schema.Attribute.Text;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', true>;
-    MapEndPoints: Schema.Attribute.Component<
-      'page-element.map-end-points',
-      true
-    >;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Games Available In Your Province'>;
+    Description: Attribute.Text;
+    BtnText: Attribute.Component<'page-element.common-button', true>;
+    MapEndPoints: Attribute.Component<'page-element.map-end-points', true>;
   };
 }
 
-export interface PageElementMapEndPoints extends Struct.ComponentSchema {
+export interface PageElementMapEndPoints extends Schema.Component {
   collectionName: 'components_page_element_map_end_points';
   info: {
     displayName: 'MapEndPoints';
   };
   attributes: {
-    Longitude: Schema.Attribute.Decimal;
-    Latitude: Schema.Attribute.Decimal;
+    Longitude: Attribute.Decimal;
+    Latitude: Attribute.Decimal;
   };
 }
 
-export interface PageElementLotteryCard extends Struct.ComponentSchema {
+export interface PageElementLotteryCard extends Schema.Component {
   collectionName: 'components_page_element_lottery_cards';
   info: {
     displayName: 'LotteryCard';
     description: '';
   };
   attributes: {
-    CardImage: Schema.Attribute.Media<'images' | 'files'>;
-    Title: Schema.Attribute.String;
-    Description: Schema.Attribute.Text;
-    ReadMore: Schema.Attribute.Component<'page-element.common-button', false>;
+    CardImage: Attribute.Media<'images' | 'files'>;
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    ReadMore: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementLandingBannerr extends Struct.ComponentSchema {
+export interface PageElementLandingBannerr extends Schema.Component {
   collectionName: 'components_page_element_landing_bannerrs';
   info: {
     displayName: 'LandingBannerr';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Ready To Get Started'>;
-    Description: Schema.Attribute.Text;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', false>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ready To Get Started'>;
+    Description: Attribute.Text;
+    BtnText: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementImagesWrapper extends Struct.ComponentSchema {
+export interface PageElementImagesWrapper extends Schema.Component {
   collectionName: 'components_page_element_images_wrappers';
   info: {
     displayName: 'ImagesWrapper';
   };
   attributes: {
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface PageElementHowItWorks extends Struct.ComponentSchema {
+export interface PageElementHowItWorks extends Schema.Component {
   collectionName: 'components_page_element_how_it_works';
   info: {
     displayName: 'HowItWorks';
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'How It Works'>;
-    Description: Schema.Attribute.Text;
-    LotteryCard: Schema.Attribute.Component<'page-element.lottery-card', true>;
+    Title: Attribute.String & Attribute.DefaultTo<'How It Works'>;
+    Description: Attribute.Text;
+    LotteryCard: Attribute.Component<'page-element.lottery-card', true>;
   };
 }
 
-export interface PageElementHomeHero extends Struct.ComponentSchema {
+export interface PageElementHomeHero extends Schema.Component {
   collectionName: 'components_page_element_home_heroes';
   info: {
     displayName: 'HomeHero';
@@ -131,11 +124,11 @@ export interface PageElementHomeHero extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    heroCard: Schema.Attribute.Component<'page-element.home-card', true>;
+    heroCard: Attribute.Component<'page-element.home-card', true>;
   };
 }
 
-export interface PageElementHomeCard extends Struct.ComponentSchema {
+export interface PageElementHomeCard extends Schema.Component {
   collectionName: 'components_page_element_home_cards';
   info: {
     displayName: 'HomeHeroSection';
@@ -143,256 +136,245 @@ export interface PageElementHomeCard extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    SubTitle: Schema.Attribute.Text;
-    BannerImage: Schema.Attribute.Media<'images' | 'files'>;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', false>;
+    title: Attribute.String;
+    SubTitle: Attribute.Text;
+    BannerImage: Attribute.Media<'images' | 'files'>;
+    BtnText: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementHeader extends Struct.ComponentSchema {
+export interface PageElementHeader extends Schema.Component {
   collectionName: 'components_page_element_headers';
   info: {
     displayName: 'Header';
   };
   attributes: {
-    Logo: Schema.Attribute.Media<'images' | 'files'>;
-    Link: Schema.Attribute.Component<'page-element.common-button', true>;
+    Logo: Attribute.Media<'images' | 'files'>;
+    Link: Attribute.Component<'page-element.common-button', true>;
   };
 }
 
-export interface PageElementGetStartedBannerr extends Struct.ComponentSchema {
+export interface PageElementGetStartedBannerr extends Schema.Component {
   collectionName: 'components_page_element_get_started_bannerrs';
   info: {
     displayName: 'GetStartedBannerr';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Ready To Get Started'>;
-    Description: Schema.Attribute.Text;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', false>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ready To Get Started'>;
+    Description: Attribute.Text;
+    BtnText: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementFooter extends Struct.ComponentSchema {
+export interface PageElementFooter extends Schema.Component {
   collectionName: 'components_page_element_footers';
   info: {
     displayName: 'Footer';
     description: '';
   };
   attributes: {
-    Logo: Schema.Attribute.Media<'images' | 'files'>;
-    FieldWrapper: Schema.Attribute.Component<'footer.field-wrapper', true>;
-    CopyRight: Schema.Attribute.Component<'footer.copy-right', false>;
+    Logo: Attribute.Media<'images' | 'files'>;
+    FieldWrapper: Attribute.Component<'footer.field-wrapper', true>;
+    CopyRight: Attribute.Component<'footer.copy-right'>;
   };
 }
 
-export interface PageElementFeatureCard extends Struct.ComponentSchema {
+export interface PageElementFeatureCard extends Schema.Component {
   collectionName: 'components_page_element_feature_cards';
   info: {
     displayName: 'FeatureCard';
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Description: Schema.Attribute.String;
-    CardStatus: Schema.Attribute.String & Schema.Attribute.DefaultTo<'primary'>;
-    Icon: Schema.Attribute.Media<'images' | 'files'>;
-    GetStarted: Schema.Attribute.Component<'page-element.common-button', false>;
+    Title: Attribute.String;
+    Description: Attribute.String;
+    CardStatus: Attribute.String & Attribute.DefaultTo<'primary'>;
+    Icon: Attribute.Media<'images' | 'files'>;
+    GetStarted: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface PageElementFaq extends Struct.ComponentSchema {
+export interface PageElementFaq extends Schema.Component {
   collectionName: 'components_page_element_faqs';
   info: {
     displayName: 'FAQ';
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQ'>;
-    Description: Schema.Attribute.Text;
-    QuestionWrapper: Schema.Attribute.Component<
+    Title: Attribute.String & Attribute.DefaultTo<'FAQ'>;
+    Description: Attribute.Text;
+    QuestionWrapper: Attribute.Component<
       'page-element.questions-wrapper',
       true
     >;
-    BtnText: Schema.Attribute.Component<'page-element.common-button', true>;
+    BtnText: Attribute.Component<'page-element.common-button', true>;
   };
 }
 
-export interface PageElementContactUs extends Struct.ComponentSchema {
+export interface PageElementContactUs extends Schema.Component {
   collectionName: 'components_page_element_contactuses';
   info: {
     displayName: 'ContactUs';
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'CONTACT US'>;
-    Heading: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Have a Question ? Let\u2019s Get in Touch with us'>;
-    DetailBox: Schema.Attribute.Component<'contact-us.detail-box', true>;
-    ContactForm: Schema.Attribute.Component<'contact-us.contact-form', false>;
-    useLink: Schema.Attribute.Component<'contact-us.use-link', true>;
+    Title: Attribute.String & Attribute.DefaultTo<'CONTACT US'>;
+    Heading: Attribute.String &
+      Attribute.DefaultTo<'Have a Question ? Let\u2019s Get in Touch with us'>;
+    DetailBox: Attribute.Component<'contact-us.detail-box', true>;
+    ContactForm: Attribute.Component<'contact-us.contact-form'>;
+    useLink: Attribute.Component<'contact-us.use-link', true>;
   };
 }
 
-export interface PageElementCommonButton extends Struct.ComponentSchema {
+export interface PageElementCommonButton extends Schema.Component {
   collectionName: 'components_page_element_common_buttons';
   info: {
     displayName: 'CommonButton';
     description: '';
   };
   attributes: {
-    ButtonText: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Get Started'>;
-    Icon: Schema.Attribute.Media<'files' | 'images'>;
+    ButtonText: Attribute.String & Attribute.DefaultTo<'Get Started'>;
+    Icon: Attribute.Media<'files' | 'images'>;
   };
 }
 
-export interface PageElementClientTestimonials extends Struct.ComponentSchema {
+export interface PageElementClientTestimonials extends Schema.Component {
   collectionName: 'components_page_element_client_testimonials';
   info: {
     displayName: 'ClientTestimonials';
     description: '';
   };
   attributes: {
-    Description: Schema.Attribute.Text;
-    YearsInIndustry: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<14>;
-    HappyClients: Schema.Attribute.Integer;
-    RaisedFor: Schema.Attribute.Integer;
-    CompniesImage: Schema.Attribute.Component<
+    Description: Attribute.Text;
+    YearsInIndustry: Attribute.Integer & Attribute.DefaultTo<14>;
+    HappyClients: Attribute.Integer;
+    RaisedFor: Attribute.Integer;
+    CompniesImage: Attribute.Component<
       'client-testimonials.companies-review',
       true
     >;
-    Logo: Schema.Attribute.Media<'images' | 'files'>;
+    Logo: Attribute.Media<'images' | 'files'>;
   };
 }
 
-export interface PageElementClientReviews extends Struct.ComponentSchema {
+export interface PageElementClientReviews extends Schema.Component {
   collectionName: 'components_page_element_client_reviews';
   info: {
     displayName: 'ClientReviews';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'What our clients think about TLF services'>;
-    ImagesWraapper: Schema.Attribute.Component<
-      'page-element.images-wrapper',
-      true
-    >;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'What our clients think about TLF services'>;
+    ImagesWraapper: Attribute.Component<'page-element.images-wrapper', true>;
   };
 }
 
-export interface PageElementBlogPost extends Struct.ComponentSchema {
+export interface PageElementBlogPost extends Schema.Component {
   collectionName: 'components_page_element_blog_posts';
   info: {
     displayName: 'BlogPost';
   };
   attributes: {
-    blogImage: Schema.Attribute.Media<'images' | 'files'>;
-    BlogTime: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'8 min read'>;
-    Description: Schema.Attribute.Text;
+    blogImage: Attribute.Media<'images' | 'files'>;
+    BlogTime: Attribute.String & Attribute.DefaultTo<'8 min read'>;
+    Description: Attribute.Text;
   };
 }
 
-export interface PageElementBannner extends Struct.ComponentSchema {
+export interface PageElementBannner extends Schema.Component {
   collectionName: 'components_page_element_bannners';
   info: {
     displayName: 'Bannner';
   };
   attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Ready To Get Started'>;
-    Description: Schema.Attribute.Text;
-    SignupButton: Schema.Attribute.Component<
-      'page-element.common-button',
-      false
-    >;
+    Title: Attribute.String & Attribute.DefaultTo<'Ready To Get Started'>;
+    Description: Attribute.Text;
+    SignupButton: Attribute.Component<'page-element.common-button'>;
   };
 }
 
-export interface FooterFieldWrapper extends Struct.ComponentSchema {
+export interface FooterFieldWrapper extends Schema.Component {
   collectionName: 'components_footer_field_wrappers';
   info: {
     displayName: 'FieldWrapper';
   };
   attributes: {
-    FieldTitle: Schema.Attribute.String;
-    ButtonText: Schema.Attribute.Component<'page-element.common-button', true>;
+    FieldTitle: Attribute.String;
+    ButtonText: Attribute.Component<'page-element.common-button', true>;
   };
 }
 
-export interface FooterCopyRight extends Struct.ComponentSchema {
+export interface FooterCopyRight extends Schema.Component {
   collectionName: 'components_footer_copy_rights';
   info: {
     displayName: 'CopyRight';
   };
   attributes: {
-    copyright: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
+    copyright: Attribute.String &
+      Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
   };
 }
 
-export interface ContactUsUseLink extends Struct.ComponentSchema {
-  collectionName: 'components_contact_us_use_links';
-  info: {
-    displayName: 'useLink';
-  };
-  attributes: {
-    Link: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ContactUsFormField extends Struct.ComponentSchema {
-  collectionName: 'components_contact_us_form_fields';
-  info: {
-    displayName: 'FormField';
-  };
-  attributes: {
-    Label: Schema.Attribute.String;
-    Placeholder: Schema.Attribute.String;
-  };
-}
-
-export interface ContactUsDetailBox extends Struct.ComponentSchema {
-  collectionName: 'components_contact_us_detail_boxes';
-  info: {
-    displayName: 'DetailBox';
-  };
-  attributes: {
-    FieldTitle: Schema.Attribute.String;
-    FieldDetail: Schema.Attribute.Text;
-    SubTitle: Schema.Attribute.String;
-  };
-}
-
-export interface ContactUsContactForm extends Struct.ComponentSchema {
-  collectionName: 'components_contact_us_contact_forms';
-  info: {
-    displayName: 'ContactForm';
-  };
-  attributes: {
-    Title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Fill up the Form  and our team will get back to within 24 hrs'>;
-    FormField: Schema.Attribute.Component<'contact-us.form-field', true>;
-    SubmitBtn: Schema.Attribute.Component<'page-element.common-button', false>;
-  };
-}
-
-export interface ClientTestimonialsCompaniesReview
-  extends Struct.ComponentSchema {
+export interface ClientTestimonialsCompaniesReview extends Schema.Component {
   collectionName: 'components_client_testimonials_companies_reviews';
   info: {
     displayName: 'Companies Review';
   };
   attributes: {
-    companyImage: Schema.Attribute.Media<'images' | 'files', true>;
+    companyImage: Attribute.Media<'images' | 'files', true>;
   };
 }
 
-declare module '@strapi/strapi' {
-  export module Public {
-    export interface ComponentSchemas {
+export interface ContactUsUseLink extends Schema.Component {
+  collectionName: 'components_contact_us_use_links';
+  info: {
+    displayName: 'useLink';
+  };
+  attributes: {
+    Link: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ContactUsFormField extends Schema.Component {
+  collectionName: 'components_contact_us_form_fields';
+  info: {
+    displayName: 'FormField';
+  };
+  attributes: {
+    Label: Attribute.String;
+    Placeholder: Attribute.String;
+  };
+}
+
+export interface ContactUsDetailBox extends Schema.Component {
+  collectionName: 'components_contact_us_detail_boxes';
+  info: {
+    displayName: 'DetailBox';
+  };
+  attributes: {
+    FieldTitle: Attribute.String;
+    FieldDetail: Attribute.Text;
+    SubTitle: Attribute.String;
+  };
+}
+
+export interface ContactUsContactForm extends Schema.Component {
+  collectionName: 'components_contact_us_contact_forms';
+  info: {
+    displayName: 'ContactForm';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Fill up the Form  and our team will get back to within 24 hrs'>;
+    FormField: Attribute.Component<'contact-us.form-field', true>;
+    SubmitBtn: Attribute.Component<'page-element.common-button'>;
+  };
+}
+
+declare module '@strapi/types' {
+  export module Shared {
+    export interface Components {
       'page-element.why-chose-tlf': PageElementWhyChoseTlf;
       'page-element.recent-blog': PageElementRecentBlog;
       'page-element.questions-wrapper': PageElementQuestionsWrapper;
@@ -417,11 +399,11 @@ declare module '@strapi/strapi' {
       'page-element.bannner': PageElementBannner;
       'footer.field-wrapper': FooterFieldWrapper;
       'footer.copy-right': FooterCopyRight;
+      'client-testimonials.companies-review': ClientTestimonialsCompaniesReview;
       'contact-us.use-link': ContactUsUseLink;
       'contact-us.form-field': ContactUsFormField;
       'contact-us.detail-box': ContactUsDetailBox;
       'contact-us.contact-form': ContactUsContactForm;
-      'client-testimonials.companies-review': ClientTestimonialsCompaniesReview;
     }
   }
 }
