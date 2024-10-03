@@ -1,10 +1,10 @@
 const BlogPost = ({
-  image,
   category,
-  readTime,
+  BlogTime,
   title,
-  description,
+  Description,
   isFeature = false,
+  blogImage,
 }) => (
   <div
     className={`bg-white rounded-lg overflow-hidden shadow-md ${
@@ -13,7 +13,11 @@ const BlogPost = ({
   >
     <div className={`${isFeature ? "md:w-1/2 " : "min-w-[96px]"}`}>
       <img
-        src={image}
+        src={
+          isFeature
+            ? ` http://localhost:1337${blogImage}`
+            : ` http://localhost:1337${blogImage.data.attributes.url}`
+        }
         alt={title}
         className={`object-cover ${
           isFeature ? "w-full h-full " : "w-[96px] h-[96px]"
@@ -27,12 +31,12 @@ const BlogPost = ({
             {category}
           </span>
         )}
-        <span className="text-gray-600 text-sm">{readTime} MIN READ</span>
+        <span className="text-gray-600 text-sm">{BlogTime}</span>
       </div>
       <h3 className={`font-bold mb-2 ${isFeature ? "text-2xl" : "text-lg"}`}>
         {title}
       </h3>
-      {description && <p className="text-gray-700 mb-4">{description}</p>}
+      {Description && <p className="text-gray-700 mb-4">{Description}</p>}
       {isFeature && (
         <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-blue-500 bg-white rounded-lg hover:bg-blue-50 focus:ring-4 focus:outline-none focus:ring-blue-300">
           Read More

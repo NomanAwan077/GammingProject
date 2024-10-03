@@ -4,7 +4,6 @@ import CTASection from "../../components/CtaSection";
 import FAQ from "../../components/FAQ";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import HeroSection from "../../components/HeroSection";
 import HowItWorks from "../../components/HowItWorks";
 import LandingHeroSection from "../../components/LandingHeroSection";
 import RecentBlogSection from "../../components/RecentBlogs";
@@ -13,7 +12,7 @@ import WhyChooseTLF from "../../components/WhyChoseTLF";
 
 function LandingPage() {
   return (
-    <div className="App">
+    <div className="flex flex-col align-center justify-center">
       <Header />
       <LandingHeroSection />
       <ClientTestimonials />

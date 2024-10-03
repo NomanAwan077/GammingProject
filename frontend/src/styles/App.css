@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.primary-light {
+  background-color: #f1f8ff;
+}
+.success {
+  background-color: #ebfff8;
+}
+.primary {
+  background-color: #067df9;
+}
+.secondary {
+  background-color: #f6f6f6;
+}
