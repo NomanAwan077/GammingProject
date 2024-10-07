@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import { GetData } from "../../api/services";
 import ProvinceGames from "../../components/ProvinceGames";
 import ContactSession from "../../components/ContactSession";
+import { LandingPageUrl } from "../../constant/index";
 
 function LandingPage() {
   const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ function LandingPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const dataPromise = await GetData();
+        const dataPromise = await GetData(LandingPageUrl);
         setData(dataPromise?.data[0]?.attributes);
         setLoading(false);
       } catch (error) {
