@@ -1,24 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BlogPost from "../BlogPost";
 import BlogBanner from "../../assets/images/blog-banner.png";
 import Post1 from "../../assets/images/post-1.png";
 import Post2 from "../../assets/images/post-2.png";
 import Post3 from "../../assets/images/post-3.png";
-import { GetData } from "../../api/services";
-
-const RecentBlogSection = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataPromise = await GetData();
-      setData(dataPromise?.data[0]?.attributes?.RecentBlogs);
-      console.log(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
+const RecentBlogSection = ({ data, loading }) => {
   const featuredPost = {
     blogImage: data?.MainImage?.data?.attributes?.url,
     category: data?.BlogStatus,
@@ -28,6 +14,7 @@ const RecentBlogSection = () => {
   };
 
   const recentPosts = data?.BlogPost;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">

@@ -1,34 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { GetData } from "../../api/services";
+import LoadingSpinner from "../common/LoadingSpinner";
 
-const LandingHeroSection = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+const LandingHeroSection = ({ data, loading }) => {
   const [subtitle, setSubtitle] = useState([]);
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const dataPromise = await GetData();
-        setData(dataPromise?.data[0]?.attributes?.HeroSection);
-        const subtitleArray =
-          dataPromise?.data[0]?.attributes?.HeroSection.SubTitle?.split(":") ||
-          [];
-        setSubtitle(subtitleArray);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-  if (loading) return <p>Loading...</p>;
+    setSubtitle(data?.SubTitle?.split("|"));
+  }, [data]);
+
+  if (loading) return <LoadingSpinner />;
   return (
     <section className="flex flex-col items-center justify-center text-center py-12 bg-gray-100 gap-6">
       <div className="flex gap-1 align-center">
-        <p className="text-xl">{subtitle[0]}:</p>
-        <p className="text-xl">{subtitle[1]}</p>
+        {subtitle?.map((item, index) => (
+          <p className="text-xl" key={index}>
+            {item}:
+          </p>
+        ))}
       </div>
       <h1 className="text-4xl font-bold">{data?.title}</h1>
       <img

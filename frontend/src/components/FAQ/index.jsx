@@ -1,18 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { GetData } from "../../api/services";
+import React from "react";
 
-const FAQ = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataPromise = await GetData();
-      setData(dataPromise?.data[0]?.attributes?.FAQ);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
+const FAQ = ({ data, loading }) => {
   if (loading) return <p>Loading...</p>;
   const faqs = data?.QuestionWrapper;
 
@@ -34,7 +22,7 @@ const FAQ = () => {
       </div>
 
       <div className="max-w-3xl mx-auto">
-        {faqs.map((faq, index) => (
+        {faqs?.map((faq, index) => (
           <div key={index} className="border-b py-4">
             <h3 className="font-bold">{faq.Question}</h3>
             <p>{faq.Answer}</p>

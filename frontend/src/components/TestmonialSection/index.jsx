@@ -2,17 +2,7 @@ import React, { useState, useEffect } from "react";
 import heroImage from "../../assets/images/hero-frame.png";
 import { GetData } from "../../api/services";
 
-const TestimonialSection = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataPromise = await GetData();
-      setData(dataPromise?.data[0]?.attributes?.ClientReviews);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+const TestimonialSection = ({ data, loading }) => {
   if (loading) return <p>Loading...</p>;
 
   return (

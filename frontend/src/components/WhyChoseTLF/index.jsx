@@ -2,19 +2,7 @@ import React, { useEffect, useState } from "react";
 import FeatureCard from "../FeatureCard";
 import { GetData } from "../../api/services";
 
-const WhyChooseTLF = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataPromise = await GetData();
-      setData(dataPromise?.data[0]?.attributes?.WhyChoseTLF);
-      console.log(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+const WhyChooseTLF = ({ data, loading }) => {
   if (loading) return <p>Loading...</p>;
 
   return (

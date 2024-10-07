@@ -1,25 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { GetData } from "../../api/services";
+import LoadingSpinner from "../common/LoadingSpinner";
 
-const ClientTestimonials = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const dataPromise = await GetData();
-        setData(dataPromise?.data[0].attributes?.ClientTestimonial);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-  if (loading) return <p>Loading...</p>;
+const ClientTestimonials = ({ data, loading }) => {
+  if (loading) return <LoadingSpinner />;
   return (
     <section className="py-12 bg-white text-center gap-6 flex flex-col max-w-[1072px] align-center m-auto">
       <h2 className="text-2xl font-semibold">{data?.Description}</h2>

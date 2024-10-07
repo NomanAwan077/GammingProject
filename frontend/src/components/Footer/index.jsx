@@ -1,41 +1,23 @@
 import React from "react";
 
-const Footer = () => {
-  const footerLinks = [
-    {
-      title: "Fundraising Products",
-      links: [
-        "Progressive Online 50/50",
-        "Classic Online 50/50",
-        "Chase the Ace",
-        "Prize Raffles",
-      ],
-    },
-    {
-      title: "Support",
-      links: ["Troubleshooting", "FAQ's"],
-    },
-    {
-      title: "Company",
-      links: ["About us", "Pricing", "Contact Us"],
-    },
-  ];
+const Footer = ({ data, loading }) => {
+  if (loading) return <p>Loading...</p>;
+  const footerLinks = data?.FieldWrapper.map((item) => {
+    return {
+      title: item.FieldTitle,
+      links: item.ButtonText.map((item) => item.ButtonText),
+    };
+  });
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8 mt-[96px]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
           <div className="mb-8 md:mb-0">
-            <svg
-              className="w-12 h-12 text-white mb-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            <h2 className="text-xl font-bold text-white">
-              Fundraising Solutions
-            </h2>
+            <img
+              src={`http://localhost:1337${data?.Logo?.data?.attributes?.url}`}
+              className=" text-white mb-4"
+            />
           </div>
           {footerLinks.map((column, index) => (
             <div key={index} className="mb-8 md:mb-0">
@@ -58,7 +40,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="border-t border-gray-700 pt-8 text-sm text-center">
-          © 2023 TLF. All Rights Reserved.
+          {data?.CopyRight.copyright}
         </div>
       </div>
     </footer>

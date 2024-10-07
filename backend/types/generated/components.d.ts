@@ -1,5 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface FooterFieldWrapper extends Schema.Component {
+  collectionName: 'components_footer_field_wrappers';
+  info: {
+    displayName: 'FieldWrapper';
+  };
+  attributes: {
+    FieldTitle: Attribute.String;
+    ButtonText: Attribute.Component<'page-element.common-button', true>;
+  };
+}
+
+export interface FooterCopyRight extends Schema.Component {
+  collectionName: 'components_footer_copy_rights';
+  info: {
+    displayName: 'CopyRight';
+  };
+  attributes: {
+    copyright: Attribute.String &
+      Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
+  };
+}
+
 export interface PageElementWhyChoseTlf extends Schema.Component {
   collectionName: 'components_page_element_why_chose_tlves';
   info: {
@@ -60,10 +82,13 @@ export interface PageElementMapEndPoints extends Schema.Component {
   collectionName: 'components_page_element_map_end_points';
   info: {
     displayName: 'MapEndPoints';
+    description: '';
   };
   attributes: {
     Longitude: Attribute.Decimal;
     Latitude: Attribute.Decimal;
+    LocationName: Attribute.String;
+    LocationDetail: Attribute.Text;
   };
 }
 
@@ -294,28 +319,6 @@ export interface PageElementBannner extends Schema.Component {
   };
 }
 
-export interface FooterFieldWrapper extends Schema.Component {
-  collectionName: 'components_footer_field_wrappers';
-  info: {
-    displayName: 'FieldWrapper';
-  };
-  attributes: {
-    FieldTitle: Attribute.String;
-    ButtonText: Attribute.Component<'page-element.common-button', true>;
-  };
-}
-
-export interface FooterCopyRight extends Schema.Component {
-  collectionName: 'components_footer_copy_rights';
-  info: {
-    displayName: 'CopyRight';
-  };
-  attributes: {
-    copyright: Attribute.String &
-      Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
-  };
-}
-
 export interface ClientTestimonialsCompaniesReview extends Schema.Component {
   collectionName: 'components_client_testimonials_companies_reviews';
   info: {
@@ -375,6 +378,8 @@ export interface ContactUsContactForm extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'footer.field-wrapper': FooterFieldWrapper;
+      'footer.copy-right': FooterCopyRight;
       'page-element.why-chose-tlf': PageElementWhyChoseTlf;
       'page-element.recent-blog': PageElementRecentBlog;
       'page-element.questions-wrapper': PageElementQuestionsWrapper;
@@ -397,8 +402,6 @@ declare module '@strapi/types' {
       'page-element.client-reviews': PageElementClientReviews;
       'page-element.blog-post': PageElementBlogPost;
       'page-element.bannner': PageElementBannner;
-      'footer.field-wrapper': FooterFieldWrapper;
-      'footer.copy-right': FooterCopyRight;
       'client-testimonials.companies-review': ClientTestimonialsCompaniesReview;
       'contact-us.use-link': ContactUsUseLink;
       'contact-us.form-field': ContactUsFormField;
