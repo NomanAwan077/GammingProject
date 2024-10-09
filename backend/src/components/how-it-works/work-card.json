@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_how_it_works_work_cards",
+  "info": {
+    "displayName": "WorkCard"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "listItem": {
+      "displayName": "listItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "work-card.list-item"
+    }
+  }
+}

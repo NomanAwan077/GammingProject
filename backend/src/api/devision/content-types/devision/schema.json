@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devisions",
+  "info": {
+    "singularName": "devision",
+    "pluralName": "devisions",
+    "displayName": "Devision",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Popular Games in Nova Scotia"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Thank you for your interest in TLF Fundraising Solutions! We're here to help you make a difference through innovative fundraising strategies."
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    },
+    "PopularGames": {
+      "displayName": "PopularGames",
+      "type": "component",
+      "repeatable": false,
+      "component": "devision.popular-games"
+    },
+    "Registration": {
+      "displayName": "Registration",
+      "type": "component",
+      "repeatable": false,
+      "component": "devision.registration"
+    },
+    "FAQ": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.faq"
+    },
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.bannner"
+    },
+    "ContactUs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.contact-us"
+    }
+  }
+}

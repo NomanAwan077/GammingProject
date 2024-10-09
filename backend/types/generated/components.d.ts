@@ -1,24 +1,39 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface FooterFieldWrapper extends Schema.Component {
-  collectionName: 'components_footer_field_wrappers';
+export interface WorkCardListItem extends Schema.Component {
+  collectionName: 'components_work_card_list_items';
   info: {
-    displayName: 'FieldWrapper';
+    displayName: 'listItem';
   };
   attributes: {
-    FieldTitle: Attribute.String;
-    ButtonText: Attribute.Component<'page-element.common-button', true>;
+    text: Attribute.String;
   };
 }
 
-export interface FooterCopyRight extends Schema.Component {
-  collectionName: 'components_footer_copy_rights';
+export interface RegistrationRegistrationCard extends Schema.Component {
+  collectionName: 'components_registration_registration_cards';
   info: {
-    displayName: 'CopyRight';
+    displayName: 'RegistrationCard';
+    description: '';
   };
   attributes: {
-    copyright: Attribute.String &
-      Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    Description: Attribute.Text;
+    BtnText: Attribute.String;
+  };
+}
+
+export interface PreviousStoriesStoryCard extends Schema.Component {
+  collectionName: 'components_previous_stories_story_cards';
+  info: {
+    displayName: 'StoryCard';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    FundsRaised: Attribute.String;
+    Description: Attribute.Text;
   };
 }
 
@@ -88,7 +103,11 @@ export interface PageElementMapEndPoints extends Schema.Component {
     Longitude: Attribute.Decimal;
     Latitude: Attribute.Decimal;
     LocationName: Attribute.String;
-    LocationDetail: Attribute.Text;
+    games: Attribute.Relation<
+      'page-element.map-end-points',
+      'oneToMany',
+      'api::game.game'
+    >;
   };
 }
 
@@ -227,7 +246,8 @@ export interface PageElementFaq extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'FAQ'>;
-    Description: Attribute.Text;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'The purpose of a FAQ is generally to provide information on frequent questions or concerns.  however, the format is a useful means of organizing information, and text'>;
     QuestionWrapper: Attribute.Component<
       'page-element.questions-wrapper',
       true
@@ -311,21 +331,135 @@ export interface PageElementBannner extends Schema.Component {
   collectionName: 'components_page_element_bannners';
   info: {
     displayName: 'Bannner';
+    description: '';
   };
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'Ready To Get Started'>;
     Description: Attribute.Text;
     SignupButton: Attribute.Component<'page-element.common-button'>;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface ClientTestimonialsCompaniesReview extends Schema.Component {
-  collectionName: 'components_client_testimonials_companies_reviews';
+export interface HowItWorksWorkCard extends Schema.Component {
+  collectionName: 'components_how_it_works_work_cards';
   info: {
-    displayName: 'Companies Review';
+    displayName: 'WorkCard';
   };
   attributes: {
-    companyImage: Attribute.Media<'images' | 'files', true>;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    listItem: Attribute.Component<'work-card.list-item', true>;
+  };
+}
+
+export interface GamePriviousStories extends Schema.Component {
+  collectionName: 'components_game_privious_stories';
+  info: {
+    displayName: 'PriviousStories';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    Description: Attribute.Text;
+    YearsInIndustry: Attribute.String;
+    HappyClients: Attribute.String;
+    RaisedFor: Attribute.String;
+    StoryCard: Attribute.Component<'previous-stories.story-card', true>;
+  };
+}
+
+export interface GameOtherGames extends Schema.Component {
+  collectionName: 'components_game_other_games';
+  info: {
+    displayName: 'OtherGames';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.DefaultTo<'Other Popular Games'>;
+    LotteryCard: Attribute.Component<'game.lottery-card', true>;
+  };
+}
+
+export interface GameLotteryCard extends Schema.Component {
+  collectionName: 'components_game_lottery_cards';
+  info: {
+    displayName: 'LotteryCard';
+  };
+  attributes: {
+    title: Attribute.String;
+    Description: Attribute.Text;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface GameHowItWorks extends Schema.Component {
+  collectionName: 'components_game_how_it_works';
+  info: {
+    displayName: 'HowItWorks';
+  };
+  attributes: {
+    title: Attribute.String;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Description: Attribute.Text;
+    BtnText: Attribute.Component<'page-element.common-button'>;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    WorkCard: Attribute.Component<'how-it-works.work-card', true>;
+  };
+}
+
+export interface FooterFieldWrapper extends Schema.Component {
+  collectionName: 'components_footer_field_wrappers';
+  info: {
+    displayName: 'FieldWrapper';
+  };
+  attributes: {
+    FieldTitle: Attribute.String;
+    ButtonText: Attribute.Component<'page-element.common-button', true>;
+  };
+}
+
+export interface FooterCopyRight extends Schema.Component {
+  collectionName: 'components_footer_copy_rights';
+  info: {
+    displayName: 'CopyRight';
+  };
+  attributes: {
+    copyright: Attribute.String &
+      Attribute.DefaultTo<'\u00A9 2023 TLF. All Rights Reserved.'>;
+  };
+}
+
+export interface DevisionRegistration extends Schema.Component {
+  collectionName: 'components_devision_registrations';
+  info: {
+    displayName: 'Registration';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.DefaultTo<'Get yourself registered in few steps'>;
+    RegistrationCard: Attribute.Component<
+      'registration.registration-card',
+      true
+    >;
+  };
+}
+
+export interface DevisionPopularGames extends Schema.Component {
+  collectionName: 'components_devision_popular_games';
+  info: {
+    displayName: 'PopularGames';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    Description: Attribute.Text;
+    games: Attribute.Relation<
+      'devision.popular-games',
+      'oneToMany',
+      'api::game.game'
+    >;
   };
 }
 
@@ -375,11 +509,22 @@ export interface ContactUsContactForm extends Schema.Component {
   };
 }
 
+export interface ClientTestimonialsCompaniesReview extends Schema.Component {
+  collectionName: 'components_client_testimonials_companies_reviews';
+  info: {
+    displayName: 'Companies Review';
+  };
+  attributes: {
+    companyImage: Attribute.Media<'images' | 'files', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'footer.field-wrapper': FooterFieldWrapper;
-      'footer.copy-right': FooterCopyRight;
+      'work-card.list-item': WorkCardListItem;
+      'registration.registration-card': RegistrationRegistrationCard;
+      'previous-stories.story-card': PreviousStoriesStoryCard;
       'page-element.why-chose-tlf': PageElementWhyChoseTlf;
       'page-element.recent-blog': PageElementRecentBlog;
       'page-element.questions-wrapper': PageElementQuestionsWrapper;
@@ -402,11 +547,20 @@ declare module '@strapi/types' {
       'page-element.client-reviews': PageElementClientReviews;
       'page-element.blog-post': PageElementBlogPost;
       'page-element.bannner': PageElementBannner;
-      'client-testimonials.companies-review': ClientTestimonialsCompaniesReview;
+      'how-it-works.work-card': HowItWorksWorkCard;
+      'game.privious-stories': GamePriviousStories;
+      'game.other-games': GameOtherGames;
+      'game.lottery-card': GameLotteryCard;
+      'game.how-it-works': GameHowItWorks;
+      'footer.field-wrapper': FooterFieldWrapper;
+      'footer.copy-right': FooterCopyRight;
+      'devision.registration': DevisionRegistration;
+      'devision.popular-games': DevisionPopularGames;
       'contact-us.use-link': ContactUsUseLink;
       'contact-us.form-field': ContactUsFormField;
       'contact-us.detail-box': ContactUsDetailBox;
       'contact-us.contact-form': ContactUsContactForm;
+      'client-testimonials.companies-review': ClientTestimonialsCompaniesReview;
     }
   }
 }

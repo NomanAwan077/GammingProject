@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_devision_registrations",
+  "info": {
+    "displayName": "Registration"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Get yourself registered in few steps"
+    },
+    "RegistrationCard": {
+      "displayName": "RegistrationCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "registration.registration-card"
+    }
+  }
+}

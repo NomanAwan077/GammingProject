@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_game_privious_stories",
+  "info": {
+    "displayName": "PriviousStories",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "YearsInIndustry": {
+      "type": "string"
+    },
+    "HappyClients": {
+      "type": "string"
+    },
+    "RaisedFor": {
+      "type": "string"
+    },
+    "StoryCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "previous-stories.story-card"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_previous_stories_story_cards",
+  "info": {
+    "displayName": "StoryCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "FundsRaised": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

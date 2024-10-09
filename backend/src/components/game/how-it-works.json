@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_game_how_it_works",
+  "info": {
+    "displayName": "HowItWorks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Description": {
+      "type": "text"
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "WorkCard": {
+      "displayName": "WorkCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "how-it-works.work-card"
+    }
+  }
+}

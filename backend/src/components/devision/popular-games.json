@@ -1,19 +1,16 @@
 {
-  "collectionName": "components_page_element_map_end_points",
+  "collectionName": "components_devision_popular_games",
   "info": {
-    "displayName": "MapEndPoints",
+    "displayName": "PopularGames",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Longitude": {
-      "type": "decimal"
-    },
-    "Latitude": {
-      "type": "decimal"
-    },
-    "LocationName": {
+    "title": {
       "type": "string"
+    },
+    "Description": {
+      "type": "text"
     },
     "games": {
       "type": "relation",

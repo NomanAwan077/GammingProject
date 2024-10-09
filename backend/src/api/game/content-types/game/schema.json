@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Previous Success Stories"
+    },
+    "Description": {
+      "type": "text",
+      "default": "TLF Fundraising Solutions, a nonprofit organization, has collaborated with numerous nonprofits worldwide."
+    },
+    "BtnText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.common-button"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "HowItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "game.how-it-works"
+    },
+    "PreviousStories": {
+      "displayName": "PriviousStories",
+      "type": "component",
+      "repeatable": false,
+      "component": "game.privious-stories"
+    },
+    "OtherGames": {
+      "displayName": "OtherGames",
+      "type": "component",
+      "repeatable": false,
+      "component": "game.other-games"
+    }
+  }
+}

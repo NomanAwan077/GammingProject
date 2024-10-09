@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_work_card_list_items",
+  "info": {
+    "displayName": "listItem"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

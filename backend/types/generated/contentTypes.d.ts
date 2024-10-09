@@ -771,6 +771,77 @@ export interface ApiCommonButtonCommonButton extends Schema.SingleType {
   };
 }
 
+export interface ApiDevisionDevision extends Schema.CollectionType {
+  collectionName: 'devisions';
+  info: {
+    singularName: 'devision';
+    pluralName: 'devisions';
+    displayName: 'Devision';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.DefaultTo<'Popular Games in Nova Scotia'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<"Thank you for your interest in TLF Fundraising Solutions! We're here to help you make a difference through innovative fundraising strategies.">;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    BtnText: Attribute.Component<'page-element.common-button'>;
+    PopularGames: Attribute.Component<'devision.popular-games'>;
+    Registration: Attribute.Component<'devision.registration'>;
+    FAQ: Attribute.Component<'page-element.faq'>;
+    Banner: Attribute.Component<'page-element.bannner'>;
+    ContactUs: Attribute.Component<'page-element.contact-us', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::devision.devision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::devision.devision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGameGame extends Schema.CollectionType {
+  collectionName: 'games';
+  info: {
+    singularName: 'game';
+    pluralName: 'games';
+    displayName: 'game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.DefaultTo<'Previous Success Stories'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'TLF Fundraising Solutions, a nonprofit organization, has collaborated with numerous nonprofits worldwide.'>;
+    BtnText: Attribute.Component<'page-element.common-button'>;
+    img: Attribute.Media<'images'>;
+    HowItWorks: Attribute.Component<'game.how-it-works'>;
+    PreviousStories: Attribute.Component<'game.privious-stories'>;
+    OtherGames: Attribute.Component<'game.other-games'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Schema.SingleType {
   collectionName: 'headers';
   info: {
@@ -897,6 +968,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::common-button.common-button': ApiCommonButtonCommonButton;
+      'api::devision.devision': ApiDevisionDevision;
+      'api::game.game': ApiGameGame;
       'api::header.header': ApiHeaderHeader;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::page-element.page-element': ApiPageElementPageElement;

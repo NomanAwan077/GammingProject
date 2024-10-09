@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_game_other_games",
+  "info": {
+    "displayName": "OtherGames",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Other Popular Games"
+    },
+    "LotteryCard": {
+      "displayName": "LotteryCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "game.lottery-card"
+    }
+  }
+}
