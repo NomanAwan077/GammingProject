@@ -37,6 +37,19 @@ export interface PreviousStoriesStoryCard extends Schema.Component {
   };
 }
 
+export interface HowItWorksWorkCard extends Schema.Component {
+  collectionName: 'components_how_it_works_work_cards';
+  info: {
+    displayName: 'WorkCard';
+  };
+  attributes: {
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    listItem: Attribute.Component<'work-card.list-item', true>;
+  };
+}
+
 export interface PageElementWhyChoseTlf extends Schema.Component {
   collectionName: 'components_page_element_why_chose_tlves';
   info: {
@@ -83,13 +96,18 @@ export interface PageElementProvinceGames extends Schema.Component {
   collectionName: 'components_page_element_province_games';
   info: {
     displayName: 'ProvinceGames';
+    description: '';
   };
   attributes: {
     Title: Attribute.String &
       Attribute.DefaultTo<'Games Available In Your Province'>;
     Description: Attribute.Text;
     BtnText: Attribute.Component<'page-element.common-button', true>;
-    MapEndPoints: Attribute.Component<'page-element.map-end-points', true>;
+    regions: Attribute.Relation<
+      'page-element.province-games',
+      'oneToMany',
+      'api::devision.devision'
+    >;
   };
 }
 
@@ -341,19 +359,6 @@ export interface PageElementBannner extends Schema.Component {
   };
 }
 
-export interface HowItWorksWorkCard extends Schema.Component {
-  collectionName: 'components_how_it_works_work_cards';
-  info: {
-    displayName: 'WorkCard';
-  };
-  attributes: {
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    listItem: Attribute.Component<'work-card.list-item', true>;
-  };
-}
-
 export interface GamePriviousStories extends Schema.Component {
   collectionName: 'components_game_privious_stories';
   info: {
@@ -525,6 +530,7 @@ declare module '@strapi/types' {
       'work-card.list-item': WorkCardListItem;
       'registration.registration-card': RegistrationRegistrationCard;
       'previous-stories.story-card': PreviousStoriesStoryCard;
+      'how-it-works.work-card': HowItWorksWorkCard;
       'page-element.why-chose-tlf': PageElementWhyChoseTlf;
       'page-element.recent-blog': PageElementRecentBlog;
       'page-element.questions-wrapper': PageElementQuestionsWrapper;
@@ -547,7 +553,6 @@ declare module '@strapi/types' {
       'page-element.client-reviews': PageElementClientReviews;
       'page-element.blog-post': PageElementBlogPost;
       'page-element.bannner': PageElementBannner;
-      'how-it-works.work-card': HowItWorksWorkCard;
       'game.privious-stories': GamePriviousStories;
       'game.other-games': GameOtherGames;
       'game.lottery-card': GameLotteryCard;

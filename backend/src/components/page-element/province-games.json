@@ -1,7 +1,8 @@
 {
   "collectionName": "components_page_element_province_games",
   "info": {
-    "displayName": "ProvinceGames"
+    "displayName": "ProvinceGames",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,11 +18,10 @@
       "repeatable": true,
       "component": "page-element.common-button"
     },
-    "MapEndPoints": {
-      "displayName": "MapEndPoints",
-      "type": "component",
-      "repeatable": true,
-      "component": "page-element.map-end-points"
+    "regions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::devision.devision"
     }
   }
 }

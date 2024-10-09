@@ -25,20 +25,30 @@ const MapSection = ({ data }) => {
       {data?.map((position, idx) => (
         <Marker
           key={idx}
-          position={[position.Latitude, position.Longitude]}
+          position={[
+            position.attributes.Latitude,
+            position.attributes.Longitude,
+          ]}
           icon={customIcon}
           eventHandlers={{
             click: () => navigate(`/location/${position.id}`),
           }}
         >
+          {console.log(position.attributes)}
+          {console.log(position.attributes.Longitude)}
+
           <Tooltip>
             <div className="text-sm font-normal">
-              <div className="text-lg font-bold">{position?.LocationName}</div>
-              {position?.games?.data?.map((game, idx) => (
-                <div className="text-sm font-normal" key={idx}>
-                  {game.attributes.title}
-                </div>
-              ))}
+              <div className="text-lg font-bold">
+                {position?.attributes?.title}
+              </div>
+              {position?.attributes?.PopularGames?.games?.data?.map(
+                (game, idx) => (
+                  <div className="text-sm font-normal" key={idx}>
+                    {game.attributes.title}
+                  </div>
+                )
+              )}
             </div>
           </Tooltip>
         </Marker>
@@ -51,11 +61,13 @@ export default MapSection;
 
 const MapBounds = ({ positions }) => {
   const map = useMap();
-
   useEffect(() => {
     if (positions?.length > 0) {
       const bounds = new L.LatLngBounds(
-        positions.map((pos) => [pos.Latitude, pos.Longitude])
+        positions.map((pos) => [
+          pos.attributes.Latitude,
+          pos.attributes.Longitude,
+        ])
       );
       map.fitBounds(bounds);
     }

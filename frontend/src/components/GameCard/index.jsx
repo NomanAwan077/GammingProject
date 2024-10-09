@@ -2,9 +2,9 @@ import React from "react";
 
 const GameCard = ({ title, description, imageSrc, btnText, btnIcon }) => {
   return (
-    <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-xl shadow-md overflow-hidden">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden">
       <div className="flex flex-col gap-4">
-        <div className="relative h-full w-full bg-green-300 rounded-lg overflow-hidden">
+        <div className="relative h-full w-full rounded-lg overflow-hidden">
           <div className="absolute inset-0 bg-gradient-radial from-transparent to-green-200 opacity-50"></div>
           <img
             src={imageSrc}

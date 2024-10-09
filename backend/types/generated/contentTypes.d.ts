@@ -794,6 +794,8 @@ export interface ApiDevisionDevision extends Schema.CollectionType {
     FAQ: Attribute.Component<'page-element.faq'>;
     Banner: Attribute.Component<'page-element.bannner'>;
     ContactUs: Attribute.Component<'page-element.contact-us'>;
+    Latitude: Attribute.String;
+    Longitude: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
