@@ -4,7 +4,7 @@
   "info": {
     "singularName": "devision",
     "pluralName": "devisions",
-    "displayName": "Devision",
+    "displayName": "Region",
     "description": ""
   },
   "options": {
@@ -59,7 +59,7 @@
     },
     "ContactUs": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "page-element.contact-us"
     }
   }

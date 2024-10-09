@@ -4,6 +4,7 @@ import LoadingSpinner from "../common/LoadingSpinner";
 
 const LandingHeroSection = ({ data, loading }) => {
   const [subtitle, setSubtitle] = useState([]);
+
   useEffect(() => {
     setSubtitle(data?.SubTitle?.split("|"));
   }, [data]);

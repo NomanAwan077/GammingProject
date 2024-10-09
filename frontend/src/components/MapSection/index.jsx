@@ -1,12 +1,13 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import locationIcon from "../../assets/location-icon.svg";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
-
+import { useNavigate } from "react-router-dom";
 const MapSection = ({ data }) => {
+  const navigate = useNavigate();
   const customIcon = new L.Icon({
     iconUrl: locationIcon,
     iconSize: [25, 41],
@@ -26,11 +27,20 @@ const MapSection = ({ data }) => {
           key={idx}
           position={[position.Latitude, position.Longitude]}
           icon={customIcon}
+          eventHandlers={{
+            click: () => navigate(`/location/${position.id}`),
+          }}
         >
-          <Popup>
-            <div className="text-lg font-bold">{position.LocationName}</div>
-            <p className="text-sm">{position.LocationDetail}</p>
-          </Popup>
+          <Tooltip>
+            <div className="text-sm font-normal">
+              <div className="text-lg font-bold">{position?.LocationName}</div>
+              {position?.games?.data?.map((game, idx) => (
+                <div className="text-sm font-normal" key={idx}>
+                  {game.attributes.title}
+                </div>
+              ))}
+            </div>
+          </Tooltip>
         </Marker>
       ))}
     </MapContainer>

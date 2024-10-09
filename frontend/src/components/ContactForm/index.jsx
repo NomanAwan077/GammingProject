@@ -70,10 +70,7 @@ const ContactForm = ({ data }) => {
             type="submit"
             className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
           >
-            {data?.SubmitBtn.ButtonText}
-            <img
-              src={`http://localhost:1337${data?.SubmitBtn.Icon.data.attributes.url}`}
-            />
+            Send Message
           </button>
         </div>
       </form>

@@ -10,7 +10,7 @@ const Footer = ({ data, loading }) => {
   });
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8 mt-[96px]">
+    <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8 mt-auto">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
           <div className="mb-8 md:mb-0">

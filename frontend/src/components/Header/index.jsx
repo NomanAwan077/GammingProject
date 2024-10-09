@@ -24,7 +24,6 @@ const Header = ({ data }) => {
       <nav className="hidden md:flex items-center gap-6">
         {data?.Link?.map((item, idx) => (
           <>
-            {console.log(item)}
             <NavItem
               key={idx}
               href={generateLinkFromString(item?.ButtonText)}

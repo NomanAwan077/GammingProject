@@ -25,9 +25,9 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App w-full h-screen flex flex-col">
         <Header data={data.Header} loading={loading} />
-        <main>
+        <main className="h-full">
           <CustomRoutes />
         </main>
         <Footer data={data.Footer} loading={loading} />

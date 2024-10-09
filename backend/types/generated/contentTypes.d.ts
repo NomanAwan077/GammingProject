@@ -776,7 +776,7 @@ export interface ApiDevisionDevision extends Schema.CollectionType {
   info: {
     singularName: 'devision';
     pluralName: 'devisions';
-    displayName: 'Devision';
+    displayName: 'Region';
     description: '';
   };
   options: {
@@ -793,7 +793,7 @@ export interface ApiDevisionDevision extends Schema.CollectionType {
     Registration: Attribute.Component<'devision.registration'>;
     FAQ: Attribute.Component<'page-element.faq'>;
     Banner: Attribute.Component<'page-element.bannner'>;
-    ContactUs: Attribute.Component<'page-element.contact-us', true>;
+    ContactUs: Attribute.Component<'page-element.contact-us'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
