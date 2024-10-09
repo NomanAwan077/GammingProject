@@ -31,12 +31,9 @@ const MapSection = ({ data }) => {
           ]}
           icon={customIcon}
           eventHandlers={{
-            click: () => navigate(`/location/${position.id}`),
+            click: () => navigate(`/region/${position.id}`),
           }}
         >
-          {console.log(position.attributes)}
-          {console.log(position.attributes.Longitude)}
-
           <Tooltip>
             <div className="text-sm font-normal">
               <div className="text-lg font-bold">

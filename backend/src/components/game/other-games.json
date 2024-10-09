@@ -10,11 +10,15 @@
       "type": "string",
       "default": "Other Popular Games"
     },
-    "LotteryCard": {
-      "displayName": "LotteryCard",
+    "games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game.game"
+    },
+    "BtnText": {
       "type": "component",
-      "repeatable": true,
-      "component": "game.lottery-card"
+      "repeatable": false,
+      "component": "page-element.common-button"
     }
   }
 }

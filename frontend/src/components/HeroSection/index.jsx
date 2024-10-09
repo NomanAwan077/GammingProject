@@ -44,6 +44,7 @@ const HeroSection = ({ data }) => {
               description={game?.attributes?.Description}
               btnText={game?.attributes?.BtnText?.ButtonText}
               btnIcon={`http://localhost:1337${game?.attributes?.BtnText?.Icon?.data?.attributes?.url}`}
+              id={game?.id}
             />
           ))}
         </div>

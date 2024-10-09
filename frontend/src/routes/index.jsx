@@ -9,7 +9,8 @@ const CustomRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/location/:region" element={<RegionDetailPage />} />
+        <Route path="/region/:region" element={<RegionDetailPage />} />
+        <Route path="/game/:id" element={<GameDetailPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -15,6 +15,7 @@ const HowItWorks = ({ data, loading }) => {
             description={card.Description}
             btnText={card.ReadMore.ButtonText}
             btnIcon={`http://localhost:1337${card.ReadMore.Icon?.data?.attributes?.url}`}
+            id={card.id}
           />
         ))}
       </div>
